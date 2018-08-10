@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<head>
+	  <meta charset="UTF-8">
+	  <title>Quotes App</title>
+	</head>
+	<body class="text-center">
+	  <h1 class="text-center text-primary">Quotes App</h1>
+
+	  <ul class="quotes">
+		  <% for(var i=0; i<quotes.length; i++) {%>
+		  	<span>-<%= quotes[i].name %></span>
+		  	<br>
+		    <li class="quote">
+		      	<span><%= quotes[i].quote %></span>
+		      	<hr>
+		    </li>
+		  <% } %>
+	  </ul>
+
+	  <div class="col-md-12">
+	  	<div class="col-md-4">
+		  	<form action="/quotes" method="POST">
+				<h2 class="text-primary"> New Quote Form </h2>
+			  	<h3> Name </h3>
+			  	<input id="name" type="text" placeholder="name" name="name">
+			    <h3> Quote </h3>
+			    <input id="quote" type="text" placeholder="quote" name="quote">
+			    <br>
+			    <button class="btn btn-primary" type="submit">Submit</button>
+			</form>
+		</div>
+
+		<div class="col-md-4">
+		  	<h2 class="text-primary"> Replace last quote written </h2>
+		  	<h3> Name </h3>
+		  	<input id="updName" type="text" placeholder="Update Last Quote of: <Name>" name="name">
+		  	<h3> New Quote </h3>
+		  	<input id="updQuote" type="text" placeholder="New Quote" name="updQuote">
+		  	<br>
+		  	<button class="btn btn-warning" id="update">Update Quote</button>
+		</div>
+
+		<div class="col-md-4">
+		  	<h2 class="text-primary"> Delete Last Quote </h2>
+		  	<h3> Name </h3>
+		  	<input id="delName" type="text" placeholder="Delete Last Quote of: <Name>" name="name">
+		  	<br>
+		  	<button class="btn btn-danger" id="delete">Delete Quote</button>
+		</div>
+	  </div>
+	  <script src="main.js"></script>
+	</body>
+</html>
